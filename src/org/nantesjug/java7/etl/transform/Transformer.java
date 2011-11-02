@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.logging.Logger;
 
 import org.nantesjug.java7.etl.FinancialData;
 
@@ -15,8 +16,13 @@ import org.nantesjug.java7.etl.FinancialData;
  */
 public class Transformer {
 
+	private static Logger logger = Logger
+			.getLogger(Transformer.class.getName());
+
 	public Set<FinancialData> transform(
 			Map<String, List<BigDecimal>> financialData) {
+		logger.info("ETL::Transform");
+
 		// Init result set
 		Set<FinancialData> dataSet = new HashSet<FinancialData>();
 

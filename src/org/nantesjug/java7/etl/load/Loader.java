@@ -4,6 +4,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Set;
+import java.util.logging.Logger;
 
 import org.nantesjug.java7.etl.FinancialData;
 
@@ -14,7 +15,11 @@ import org.nantesjug.java7.etl.FinancialData;
  */
 public class Loader {
 
+	private static Logger logger = Logger.getLogger(Loader.class.getName());
+
 	public void load(Set<FinancialData> financialData) throws IOException {
+		logger.info("ETL::Load");
+
 		// Write to output file
 		FileWriter writer = null;
 		try {

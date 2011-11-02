@@ -17,6 +17,8 @@ public class Extractor {
 	private static Logger logger = Logger.getLogger(Extractor.class.getName());
 
 	public Map<String, List<BigDecimal>> extract() throws RemoteException {
+		logger.info("ETL::Extract");
+
 		// Get connection parameters
 		String url = System.getProperty("etl.url", "localhost");
 		String user = System.getProperty("etl.user", "");
