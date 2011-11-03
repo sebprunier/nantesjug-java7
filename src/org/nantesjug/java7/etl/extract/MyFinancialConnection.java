@@ -47,7 +47,7 @@ public class MyFinancialConnection {
 	private void loadMockValues() {
 		// Dow
 		List<BigDecimal> values = new ArrayList<BigDecimal>();
-		values.add(new BigDecimal(11801.64));
+		values.add(new BigDecimal(11_801.64));
 		values.add(new BigDecimal(143.68));
 		values.add(new BigDecimal(1.23));
 
@@ -55,7 +55,7 @@ public class MyFinancialConnection {
 
 		// Nasdaq
 		values = new ArrayList<BigDecimal>();
-		values.add(new BigDecimal(2624.63));
+		values.add(new BigDecimal(2_624.63));
 		values.add(new BigDecimal(17.67));
 		values.add(new BigDecimal(0.68));
 
@@ -63,7 +63,7 @@ public class MyFinancialConnection {
 
 		// Oil
 		values = new ArrayList<BigDecimal>();
-		values.add(new BigDecimal(92.739998));
+		values.add(new BigDecimal(92.739_998));
 		values.add(new BigDecimal(0.55));
 		values.add(new BigDecimal(0.60));
 
@@ -71,7 +71,7 @@ public class MyFinancialConnection {
 
 		// Gold
 		values = new ArrayList<BigDecimal>();
-		values.add(new BigDecimal(1732.60));
+		values.add(new BigDecimal(1_732.60));
 		values.add(new BigDecimal(21.60));
 		values.add(new BigDecimal(1.26));
 
@@ -79,7 +79,7 @@ public class MyFinancialConnection {
 
 		// CAC 40
 		values = new ArrayList<BigDecimal>();
-		values.add(new BigDecimal(3110.59));
+		values.add(new BigDecimal(3_110.59));
 		values.add(new BigDecimal(42.26));
 		values.add(new BigDecimal(1.38));
 
