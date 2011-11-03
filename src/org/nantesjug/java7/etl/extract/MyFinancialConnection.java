@@ -1,6 +1,5 @@
 package org.nantesjug.java7.etl.extract;
 
-import java.io.Closeable;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -13,7 +12,7 @@ import java.util.Map;
  * 
  * @author sebastien.prunier
  */
-public class MyFinancialConnection implements Closeable {
+public class MyFinancialConnection {
 
 	private Map<String, List<BigDecimal>> financialData;
 
@@ -33,7 +32,6 @@ public class MyFinancialConnection implements Closeable {
 		return financialData;
 	}
 
-	@Override
 	public void close() throws IOException {
 		// TODO release connection to the remote financial service
 		closed = true;
