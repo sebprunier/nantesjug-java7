@@ -20,18 +20,31 @@ public class Main {
 		}
 
 		// Running ETL
-		String command = args[0];
+		String command = args[0].toLowerCase();
 		ETL etl = new ETL();
 
-		if ("run".equalsIgnoreCase(command)) {
+		switch (command) {
+		case "run":
 			logger.info("ETL is running");
 			etl.run();
-		} else if ("simulate".equalsIgnoreCase(command)) {
+			break;
+		case "simulate":
 			logger.info("ETL is running in simulation mode");
 			etl.simulate();
-		} else {
+			break;
+		default:
 			logger.warning("Unknown command : " + command);
 		}
+
+		// if ("run".equalsIgnoreCase(command)) {
+		// logger.info("ETL is running");
+		// etl.run();
+		// } else if ("simulate".equalsIgnoreCase(command)) {
+		// logger.info("ETL is running in simulation mode");
+		// etl.simulate();
+		// } else {
+		// logger.warning("Unknown command : " + command);
+		// }
 
 		System.exit(0);
 	}
