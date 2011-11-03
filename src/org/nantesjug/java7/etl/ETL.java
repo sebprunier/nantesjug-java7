@@ -2,7 +2,6 @@ package org.nantesjug.java7.etl;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.rmi.RemoteException;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;

@@ -3,7 +3,6 @@ package org.nantesjug.java7.etl.extract;
 import java.io.Closeable;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
