@@ -36,9 +36,7 @@ public class ETL {
 			Loader loader = new Loader();
 			loader.load(transformedData);
 
-		} catch (FinancialException e) {
-			logger.log(Level.SEVERE, "Error while ETL execution", e);
-		} catch (IOException e) {
+		} catch (FinancialException | IOException e) {
 			logger.log(Level.SEVERE, "Error while ETL execution", e);
 		} catch (Exception e) {
 			logger.log(Level.SEVERE, "Unknown error !!!", e);

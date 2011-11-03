@@ -4,6 +4,8 @@ public class FinancialException extends Exception {
 
 	private static final long serialVersionUID = -4811879531832584336L;
 
+	private String myCode;
+
 	public FinancialException() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -24,4 +26,11 @@ public class FinancialException extends Exception {
 		// TODO Auto-generated constructor stub
 	}
 
+	public String getMyCode() {
+		return myCode;
+	}
+
+	public void setMyCode(String myCode) {
+		this.myCode = myCode;
+	}
 }
