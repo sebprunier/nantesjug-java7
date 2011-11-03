@@ -25,7 +25,7 @@ public class MyFinancialConnection implements Closeable {
 	}
 
 	public Map<String, List<BigDecimal>> getFinancialData()
-			throws RemoteException {
+			throws FinancialException {
 		if (financialData == null) {
 			financialData = new HashMap<String, List<BigDecimal>>();
 			// TODO Execute remote financial service call

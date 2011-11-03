@@ -24,7 +24,7 @@ public class ExtractorTest {
 				assertNotNull(data.get(code));
 				assertEquals(3, data.get(code).size());
 			}
-		} catch (RemoteException e) {
+		} catch (FinancialException e) {
 			fail();
 		}
 	}

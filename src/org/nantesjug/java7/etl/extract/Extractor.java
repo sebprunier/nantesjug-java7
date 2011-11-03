@@ -16,7 +16,7 @@ public class Extractor {
 
 	private static Logger logger = Logger.getLogger(Extractor.class.getName());
 
-	public Map<String, List<BigDecimal>> extract() throws RemoteException {
+	public Map<String, List<BigDecimal>> extract() throws FinancialException {
 		logger.info("ETL::Extract");
 
 		// Get connection parameters
