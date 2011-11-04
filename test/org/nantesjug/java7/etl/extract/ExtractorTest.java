@@ -25,7 +25,9 @@ public class ExtractorTest {
 				assertNotNull(data.get(code));
 				assertEquals(3, data.get(code).size());
 			}
-		} catch (FinancialException e) {
+		}
+		// JAVA 7 : Multiple catch
+		catch (FinancialException | FinancialException2 e) {
 			fail();
 		}
 	}

@@ -1,6 +1,5 @@
 package org.nantesjug.java7.etl.extract;
 
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,7 +11,8 @@ import java.util.Map;
  * 
  * @author sebastien.prunier
  */
-public class MyFinancialConnection {
+// JAVA 7 : Custom AutoCloseable
+public class MyFinancialConnection implements AutoCloseable {
 
 	private Map<String, List<BigDecimal>> financialData;
 
@@ -23,16 +23,18 @@ public class MyFinancialConnection {
 	}
 
 	public Map<String, List<BigDecimal>> getFinancialData()
-			throws FinancialException {
+			throws FinancialException, FinancialException2 {
 		if (financialData == null) {
-			financialData = new HashMap<String, List<BigDecimal>>();
+			// JAVA 7 : Type Inference for Generics
+			financialData = new HashMap<>();
 			// TODO Execute remote financial service call
 			loadMockValues();
 		}
 		return financialData;
 	}
 
-	public void close() throws IOException {
+	@Override
+	public void close() {
 		// TODO release connection to the remote financial service
 		closed = true;
 	}
@@ -47,6 +49,7 @@ public class MyFinancialConnection {
 	private void loadMockValues() {
 		// Dow
 		List<BigDecimal> values = new ArrayList<BigDecimal>();
+		// JAVA 7 : Underscores in numeric literals
 		values.add(new BigDecimal(11_801.64));
 		values.add(new BigDecimal(143.68));
 		values.add(new BigDecimal(1.23));
@@ -55,6 +58,7 @@ public class MyFinancialConnection {
 
 		// Nasdaq
 		values = new ArrayList<BigDecimal>();
+		// JAVA 7 : Underscores in numeric literals
 		values.add(new BigDecimal(2_624.63));
 		values.add(new BigDecimal(17.67));
 		values.add(new BigDecimal(0.68));
@@ -63,6 +67,7 @@ public class MyFinancialConnection {
 
 		// Oil
 		values = new ArrayList<BigDecimal>();
+		// JAVA 7 : Underscores in numeric literals
 		values.add(new BigDecimal(92.739_998));
 		values.add(new BigDecimal(0.55));
 		values.add(new BigDecimal(0.60));
@@ -71,6 +76,7 @@ public class MyFinancialConnection {
 
 		// Gold
 		values = new ArrayList<BigDecimal>();
+		// JAVA 7 : Underscores in numeric literals
 		values.add(new BigDecimal(1_732.60));
 		values.add(new BigDecimal(21.60));
 		values.add(new BigDecimal(1.26));
@@ -79,6 +85,7 @@ public class MyFinancialConnection {
 
 		// CAC 40
 		values = new ArrayList<BigDecimal>();
+		// JAVA 7 : Underscores in numeric literals
 		values.add(new BigDecimal(3_110.59));
 		values.add(new BigDecimal(42.26));
 		values.add(new BigDecimal(1.38));

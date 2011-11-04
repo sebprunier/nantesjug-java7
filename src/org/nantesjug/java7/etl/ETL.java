@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 
 import org.nantesjug.java7.etl.extract.Extractor;
 import org.nantesjug.java7.etl.extract.FinancialException;
+import org.nantesjug.java7.etl.extract.FinancialException2;
 import org.nantesjug.java7.etl.load.Loader;
 import org.nantesjug.java7.etl.transform.Transformer;
 
@@ -36,7 +37,14 @@ public class ETL {
 			Loader loader = new Loader();
 			loader.load(transformedData);
 
-		} catch (FinancialException | IOException e) {
+		}
+		// JAVA 7 : Multiple Catch
+		catch (FinancialException | FinancialException2 e) {
+			// JAVA 7 : I can use in the catch bloc some specific methods from
+			// the IFinancialException interface !
+			logger.info(e.getMyCode());
+			logger.log(Level.SEVERE, "Error while ETL execution", e);
+		} catch (IOException e) {
 			logger.log(Level.SEVERE, "Error while ETL execution", e);
 		} catch (Exception e) {
 			logger.log(Level.SEVERE, "Unknown error !!!", e);

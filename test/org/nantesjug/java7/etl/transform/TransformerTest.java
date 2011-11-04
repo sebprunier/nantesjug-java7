@@ -26,9 +26,11 @@ public class TransformerTest {
 		assertEquals(0, data.size());
 
 		// Dataset with values
-		Map<String, List<BigDecimal>> rowData = new HashMap<String, List<BigDecimal>>();
-		List<BigDecimal> values = new ArrayList<BigDecimal>();
-		values.add(new BigDecimal(11801.64));
+		// JAVA 7 : Type Inference for Generics
+		Map<String, List<BigDecimal>> rowData = new HashMap<>();
+		List<BigDecimal> values = new ArrayList<>();
+		// JAVA 7 : Underscores in numeric literals
+		values.add(new BigDecimal(11_801.64));
 		values.add(new BigDecimal(143.68));
 		values.add(new BigDecimal(1.23));
 		rowData.put("DOW", values);

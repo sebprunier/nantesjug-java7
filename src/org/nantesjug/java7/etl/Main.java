@@ -23,6 +23,7 @@ public class Main {
 		String command = args[0].toLowerCase();
 		ETL etl = new ETL();
 
+		// JAVA 7 : Strings in Switch
 		switch (command) {
 		case "run":
 			logger.info("ETL is running");
@@ -35,16 +36,6 @@ public class Main {
 		default:
 			logger.warning("Unknown command : " + command);
 		}
-
-		// if ("run".equalsIgnoreCase(command)) {
-		// logger.info("ETL is running");
-		// etl.run();
-		// } else if ("simulate".equalsIgnoreCase(command)) {
-		// logger.info("ETL is running in simulation mode");
-		// etl.simulate();
-		// } else {
-		// logger.warning("Unknown command : " + command);
-		// }
 
 		System.exit(0);
 	}

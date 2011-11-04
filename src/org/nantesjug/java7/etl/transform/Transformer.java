@@ -24,7 +24,8 @@ public class Transformer {
 		logger.info("ETL::Transform");
 
 		// Init result set
-		Set<FinancialData> dataSet = new HashSet<FinancialData>();
+		// JAVA 7 : Type Inference for Generics
+		Set<FinancialData> dataSet = new HashSet<>();
 
 		// Transform financial data
 		for (String code : financialData.keySet()) {

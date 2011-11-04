@@ -2,6 +2,7 @@ package org.nantesjug.java7.etl;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  * This is the Model class used for Transformation.
@@ -54,17 +55,15 @@ public class FinancialData implements Serializable {
 
 	@Override
 	public String toString() {
-		return code + " : " + (value == null ? "N/A" : value.toString())
-				+ " | " + (trend == null ? "null" : trend.toString());
+		// JAVA 7 : java.lang.Objects
+		return code + " : " + Objects.toString(value, "N/A") + " | "
+				+ Objects.toString(trend);
 	}
 
 	@Override
 	public int hashCode() {
-		int result = 17;
-
-		result = 31 * result + (code == null ? 0 : code.hashCode());
-
-		return result;
+		// JAVA 7 : java.lang.Objects
+		return Objects.hash(code);
 	}
 
 }

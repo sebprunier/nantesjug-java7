@@ -1,6 +1,5 @@
 package org.nantesjug.java7.etl.extract;
 
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
@@ -15,7 +14,8 @@ public class Extractor {
 
 	private static Logger logger = Logger.getLogger(Extractor.class.getName());
 
-	public Map<String, List<BigDecimal>> extract() throws FinancialException {
+	public Map<String, List<BigDecimal>> extract() throws FinancialException,
+			FinancialException2 {
 		logger.info("ETL::Extract");
 
 		// Get connection parameters
@@ -24,20 +24,10 @@ public class Extractor {
 		String password = System.getProperty("etl.password", "");
 
 		// Get financial data
-		MyFinancialConnection conn = null;
-		try {
-			conn = new MyFinancialConnection(url, user, password);
+		// JAVA 7 : try-with-resource and custom AutoCloseable
+		try (MyFinancialConnection conn = new MyFinancialConnection(url, user,
+				password)) {
 			return conn.getFinancialData();
-
-		} finally {
-			if (conn != null) {
-				try {
-					conn.close();
-				} catch (IOException e) {
-					// Do nothing, just trace ...
-					logger.severe("Error while closing MyFinancialConnection ...");
-				}
-			}
 		}
 
 	}
